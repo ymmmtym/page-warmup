@@ -1,0 +1,14 @@
+services:
+  page-warmup:
+    image: page-warmup:local
+    build: .
+    platform: linux/amd64
+    init: true
+    cap_add:
+      - SYS_ADMIN
+    environment:
+      TARGET_URL: ${TARGET_URL:?Set TARGET_URL}
+      HEADLESS: ${HEADLESS:-false}
+      READINESS_HEADER: ${READINESS_HEADER:-}
+      NOT_READY_VALUE: ${NOT_READY_VALUE:-asleep}
+      RUST_LOG: ${RUST_LOG:-}
