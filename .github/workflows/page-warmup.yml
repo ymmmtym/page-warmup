@@ -36,7 +36,7 @@ jobs:
       NOT_READY_VALUE: ${{ inputs.not_ready_value || 'asleep' }}
       RUST_LOG: ${{ inputs.headed && 'headless_chrome::browser::process=trace' || '' }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - uses: docker/setup-buildx-action@v3
 
