@@ -1,26 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:recommended"
-  ],
-  "packageRules": [
-    {
-      "description": "Automerge non-major dependency updates once CI passes",
-      "matchUpdateTypes": [
-        "minor",
-        "patch",
-        "pin",
-        "digest",
-        "lockFileMaintenance"
-      ],
-      "automerge": true
-    },
-    {
-      "description": "Keep GitHub Actions updates manual: .github/workflows/actions.lock must be regenerated and reviewed",
-      "matchManagers": [
-        "github-actions"
-      ],
-      "automerge": false
-    }
+    "github>ymmmtym/.github"
   ]
 }
